@@ -62,8 +62,13 @@
     font-size: 32px;
     color: #fff;
     font-weight: 400;
+    text-decoration: none;
   }
 
   .item:hover {
+    color: #FAB400;
+  }
+
+  .collored{
     color: #FAB400;
   }
