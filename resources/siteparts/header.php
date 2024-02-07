@@ -21,7 +21,7 @@
       <div class="header-end">
         <div class="search">
           <div class="font-montserrat">Blog</div>
-          <img loading="lazy" src="../../resources/icones/Search.svg" class="center"/>
+          <img loading="lazy" src="../../resources/icones/Search_White.svg" class="center"/>
         </div>
         <div class="icones">
           <img loading="lazy" src="../../resources/icones/Account.svg" class="center"/>
