@@ -1,0 +1,69 @@
+/*
+        Etml
+        Author      :Aurélien Lahaye
+        Date        :07.02.2024
+        Description :Style sheet for the nav
+*/
+.flex-nav {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 128px;
+  }
+  .collored-line {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #ffcb44;
+    min-height: 5px;
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    .collored-line {
+      max-width: 100%;
+    }
+  }
+  .nav-look {
+    box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+  }
+  @media (max-width: 991px) {
+    .nav-look {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .nav-space {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    max-width: 1570px;
+    gap: 130px;
+    padding: 10px 0;
+  }
+  @media (max-width: 991px) {
+    .nav-space {
+      max-width: 100%;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+  .item {
+    font-family: 'Montserrat', sans-serif;
+    flex-grow: 1;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .item:hover {
+    color: #FAB400;
+  }
