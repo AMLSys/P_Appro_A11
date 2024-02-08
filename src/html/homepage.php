@@ -34,5 +34,5 @@
     </head>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('$homepage' => 'TRUE')); ?></nav>
-    <footer><?php require('../../resources/siteparts/footer.php'); ?></nav>
+    <footer><?php includeWithVariables('../../resources/siteparts/footer.php', array('homepage' => 'TRUE')); ?></footer>
 </html>

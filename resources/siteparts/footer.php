@@ -21,7 +21,7 @@
         <div class="footer-look">
           <div class="topline">
             <div class="logo">
-              <img loading="lazy" src="../../resources/images/Logo.svg" class="logo"/>
+              <a href="../../../Web/src/html/homepage.php" ><img loading="lazy" src="../../resources/images/Logo.svg" class="logo"/></a>
             </div>
           </div>
           <div class="topline-text">
@@ -38,26 +38,22 @@
               </div>
               <div class="bottom-bar"></div>
               <div class="bottom-bar-text">
-                <div class="bottom-item">Chaussons</div>
-                <div class="bottom-item">Sac à Pof</div>
-                <div class="bottom-item">Vêtements</div>
-                <div class="bottom-item">Entraînement</div>
-                <div class="bottom-item">Accessoires</div>
+                <a class="bottom-item <?php if ($chaussons == true) echo "collored"; ?>" href="../../../Web/src/html/chaussons.php">Chaussons</a>
+                <a class="bottom-item <?php if ($sacapof == true) echo "collored"; ?>" href="../../../Web/src/html/sac-a-pof.php">Sac à Pof</a>
+                <a class="bottom-item <?php if ($vetements == true) echo "collored"; ?>" href="../../../Web/src/html/vetements.php">Vêtements</a>
+                <a class="bottom-item <?php if ($entrainement == true) echo "collored"; ?>" href="../../../Web/src/html/entrainement.php">Entraînement</a>
+                <a class="bottom-item <?php if ($accessoires == true) echo "collored"; ?>" href="../../../Web/src/html/accessoires.php">Accessoires</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="credits">
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/a396b6a1738e5f80c078f1c8bd57e5235ca63dc8656466c0983b60e0017fac4d?apiKey=31f9f77d7ac74e5490f6982c04b3e949&"
-          class="copyright-img"
-        />
+        <img loading="lazy" src="../../resources/icones/Copyright.svg" class="copyright-img"/>
         <div class="credits-text">2024</div>
         <div class="credits-text">Aurélien Lahaye</div>
       </div>
     </div>
   </div>
-    </footer>
+</footer>
 </html>

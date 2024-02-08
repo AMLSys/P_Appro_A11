@@ -45,8 +45,8 @@
     justify-content: space-between;
     display: flex;
     width: 100%;
-    max-width: 1570px;
-    gap: 130px;
+    max-width: 1200px;
+    gap: 100px;
     padding: 10px 0;
   }
   @media (max-width: 991px) {
@@ -59,7 +59,7 @@
   .item {
     font-family: 'Montserrat', sans-serif;
     flex-grow: 1;
-    font-size: 32px;
+    font-size: 24px;
     color: #fff;
     font-weight: 400;
     text-decoration: none;

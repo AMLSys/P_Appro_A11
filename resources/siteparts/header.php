@@ -17,7 +17,7 @@
 <div class="flex-header">
   <div class="header-look">
     <div class="header-space">
-        <img loading="lazy" src="../../resources/images/Logo.svg" class="img" />
+        <a href="../../../Web/src/html/homepage.php" ><img loading="lazy" src="../../resources/images/Logo.svg" class="img" /></a>
       <div class="header-end">
         <div class="search">
           <div class="font-montserrat">Blog</div>
