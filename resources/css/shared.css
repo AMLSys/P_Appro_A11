@@ -4,3 +4,112 @@
         Date        :07.02.2024
         Description :Style sheet for the nav
 */
+
+html, body {
+    display: flex;
+    min-height: 100%;
+    flex-direction:column;
+}
+
+.promotions {
+    display: flex;
+    max-width: 99vw;
+    align-items: center;
+    object-fit: auto;
+    object-position: center;
+    margin-top: -0.2px;
+  }
+
+  .flex-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .body-background {
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 991px) {
+    .body-background {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+  .offers {
+    object-fit: auto;
+    object-position: center;
+    width: 100%;
+    max-width: 1406px;
+  }
+  @media (max-width: 991px) {
+    .offers {
+      max-width: 100%;
+    }
+  }
+  .brands-text {
+    color: #000;
+    margin-top: 66px;
+    font: 400 50px "Montserrat", sans-serif;
+  }
+  @media (max-width: 991px) {
+    .brands-text {
+      max-width: 100%;
+      margin-top: 40px;
+      font-size: 40px;
+    }
+  }
+  .brands {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    align-self: stretch;
+    display: flex;
+    margin: 88px 17px 150px 18px;
+    padding: 0 60px;
+  }
+  @media (max-width: 991px) {
+    .brands {
+      max-width: 100%;
+      margin: 40px 10px 40px 0;
+      padding: 0 20px;
+    }
+  }
+  .all-brands {
+    display: flex;
+    width: 100%;
+    max-width: 1361px;
+    flex-direction: column;
+  }
+  @media (max-width: 991px) {
+    .all-brands {
+      max-width: 100%;
+    }
+  }
+  .top-brands {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (max-width: 991px) {
+    .top-brands {
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  .bottom-brands {
+    align-self: center;
+    margin-top: 45px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  @media (max-width: 991px) {
+    .bottom-brands {
+      margin-top: 40px;
+    }
+  }
+  .center-brands {
+    display: flex;
+  }

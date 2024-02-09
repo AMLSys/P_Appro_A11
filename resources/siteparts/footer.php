@@ -49,9 +49,8 @@
         </div>
       </div>
       <div class="credits">
-        <img loading="lazy" src="../../resources/icones/Copyright.svg" class="copyright-img"/>
-        <div class="credits-text">2024</div>
-        <div class="credits-text">Aurélien Lahaye</div>
+          <img loading="lazy" src="../../resources/icones/Copyright.svg" class="copyright-img"/>
+          <a href="https://github.com/AMLSys" class="credits-text">2024 Aurélien Lahaye</a>
       </div>
     </div>
   </div>
