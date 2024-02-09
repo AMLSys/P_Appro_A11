@@ -17,7 +17,22 @@
             }
             echo $output;
             }
-        ?>
+?>
+
+<?php 
+$servername = "localhost";
+$username = "root";
+$password = "root";
+
+try{
+    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade", $username, $password);
+    $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage FROM t_articles";
+    $data = $conn->query($query)->fetchAll(PDO::FETCH_BOTH);
+}catch(PDOException $e){
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -38,7 +53,30 @@
         <div class="flex-body">
             <div class="body-background">
                 <img src="../../resources/images/Promotions.svg" class="promotions"/>
-                <img loading="lazy" src="../../resources/images/Offres.svg" class="offers" />
+                <div>
+                    <div class="carrousel-top">
+                            <p class="carrousel-title">Offres</p>
+                            <div class="carrousel-line"></div>
+                        </div>
+                    <div class="carrousel-flex">
+                        <button class="carrousel-buttons carrousel-left-button" type="button"></button>
+                        <?php
+                        
+                            foreach(array_slice($data, 0, 4) as $row){
+                                $image = "../../resources/images/articles/". $row['artImage'];
+                                echo "
+                                <div class='carrousel-item'>
+                                    <img src='$image' class='carrousel-image' />
+                                    <p class='carrousel-brand'>{$row['artBrand']}</p>
+                                    <p class='carrousel-model'>{$row['artModel']}</p>
+                                    <p class='carrousel-price'>CHF {$row['artPrice']}</p>
+                                </div>";
+                            }
+
+                        ?>
+                        <button class="carrousel-buttons carrousel-right-button" type="button"></button>
+                    </div>
+                </div>
                 <p class="brands-text">Marques partenaires</p>
                 <div class="brands">
                     <div class="all-brands">
