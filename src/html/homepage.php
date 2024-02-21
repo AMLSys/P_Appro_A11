@@ -25,11 +25,17 @@ $username = "root";
 $password = "root";
 
 try{
-    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
     $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage FROM t_articles";
     $data = $conn->query($query)->fetchAll(PDO::FETCH_BOTH);
 }catch(PDOException $e){
 }
+
+?>
+
+<?php
+$lowvalue = 0;
+$highvalue = 8;
 
 ?>
 
@@ -42,9 +48,11 @@ try{
 		    Description: Home page of the webiste
 	    -->
         <title>Bouldero - Home page</title>
-        <meta charset="utf-8" />
+        <meta http-equiv="content-type" content="text/html;  charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../resources/css/shared.css">
+        <link rel="stylesheet" href="../../resources/css/flickity.css">
+        <script src="../../resources/js/flickity.pkgd.js"></script>
         <link rel="icon" type="image/png" href="../../resources/icones/Bouldero_Logo.svg">
     </head>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
@@ -58,38 +66,35 @@ try{
                             <p class="carrousel-title">Offres</p>
                             <div class="carrousel-line"></div>
                         </div>
-                    <div class="carrousel-flex">
-                        <button class="carrousel-buttons carrousel-left-button" type="button"></button>
-                        <?php
+                    <div class=""  data-flickity='{ "lazyLoad": 2, "initialIndex": 0, "wrapAround": true}'>
                         
-                            foreach(array_slice($data, 0, 4) as $row){
+                        <?php
+                            foreach(array_slice($data, $lowvalue, $highvalue) as $row){
                                 $image = "../../resources/images/articles/". $row['artImage'];
                                 echo "
                                 <div class='carrousel-item'>
-                                    <img src='$image' class='carrousel-image' />
+                                    <img data-flickity-lazyload='$image' class='carrousel-image' />
                                     <p class='carrousel-brand'>{$row['artBrand']}</p>
                                     <p class='carrousel-model'>{$row['artModel']}</p>
                                     <p class='carrousel-price'>CHF {$row['artPrice']}</p>
                                 </div>";
                             }
-
                         ?>
-                        <button class="carrousel-buttons carrousel-right-button" type="button"></button>
                     </div>
                 </div>
                 <p class="brands-text">Marques partenaires</p>
                 <div class="brands">
                     <div class="all-brands">
                         <div class="top-brands">
-                            <img loading="lazy" src="../../resources/icones/Red Chili.svg"/>
-                            <img loading="lazy" src="../../resources/icones/Black Diamond.svg"/>
-                            <img loading="lazy" src="../../resources/icones/Simond.svg"/>
+                            <img loading="lazy" src="../../resources/icones/brands/Red Chili.svg"/>
+                            <img loading="lazy" src="../../resources/icones/brands/Black Diamond.svg"/>
+                            <img loading="lazy" src="../../resources/icones/brands/Simond.svg"/>
                         </div>
                         <div class="bottom-brands">
                             <div class="center-brands">
-                                <img loading="lazy" src="../../resources/icones/Scarpa.svg"/>
-                                <img loading="lazy" src="../../resources/icones/Petzl.svg"/>
-                                <img loading="lazy" src="../../resources/icones/LaSportiva.svg"/>
+                                <img loading="lazy" src="../../resources/icones/brands/Scarpa.svg"/>
+                                <img loading="lazy" src="../../resources/icones/brands/Petzl.svg"/>
+                                <img loading="lazy" src="../../resources/icones//brands/LaSportiva.svg"/>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@
 <div class="flex-header">
   <div class="header-look">
     <div class="header-space">
-        <a href="../../../Web/src/html/homepage.php" ><img loading="lazy" src="../../resources/images/Logo.svg" class="img" /></a>
+        <a href="../../../Web/src/html/homepage.php" ><img loading="lazy" src="../../resources/images/Logo.svg" class="bouldero-logo" /></a>
       <div class="header-end">
         <div class="search">
           <div class="font-montserrat">Blog</div>
