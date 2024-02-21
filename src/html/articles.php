@@ -82,20 +82,17 @@ $price = $item['artPrice'];
           <div class="articlePrice">CHF <?php echo $price ?></div>
           <div class="articleTva">TVA incluse + Frais de livraison</div>
           <div class="size-border">
-            <div class="size-data">
-              <div class="size-text">Choix de la pointure</div>
+            <div class="buttons-data">
+              <div class="buttons-text">Choix de la pointure</div>
               <img loading="lazy" src="../../resources/icones/Down Arrow.svg" class="down-arrow" />
             </div>
           </div>
-          <div class="basket-gap">
-            <div class="basket-flex">
-                <div class="basket">
-                  <div class="basket-background">
-                    <div class="basket-text">Ajouter au panier</div>
-                  </div>
-               </div>
-               <div class="love-flex"><div class="love-background"><img loading="lazy" src="../../resources/icones/Love_Articles.svg" class= "love-image"/></div></div>
+          <div class="basket-background">
+            <div class="buttons-data">
+              <div class="buttons-text"><div class="basket-text">Ajouter l'article au panier</div></div>
             </div>
+          </div>
+          <!--<div class="love-flex"><div class="love-background"><img loading="lazy" src="../../resources/icones/Love_Articles.svg" class= "love-image"/></div></div>-->
           </div>
         </div>
       </div>
