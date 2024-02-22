@@ -18,6 +18,7 @@
             echo $output;
             }
         ?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>

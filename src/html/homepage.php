@@ -68,18 +68,16 @@ $highvalue = 8;
                         </div>
                     <div class=""  data-flickity='{ "lazyLoad": 2, "initialIndex": 0, "wrapAround": true}'>
                         
-                        <?php
-                            foreach(array_slice($data, $lowvalue, $highvalue) as $row){
-                                $image = "../../resources/images/articles/". $row['artImage'];
-                                echo "
+                        <?php foreach(array_slice($data, $lowvalue, $highvalue) as $row): $image = "../../resources/images/articles/". $row['artImage'];?>
+                            <a href="./articles.php?idArticle=<?php echo $row['idArticle']?>" class="carrousel-link">
                                 <div class='carrousel-item'>
-                                    <img data-flickity-lazyload='$image' class='carrousel-image' />
-                                    <p class='carrousel-brand'>{$row['artBrand']}</p>
-                                    <p class='carrousel-model'>{$row['artModel']}</p>
-                                    <p class='carrousel-price'>CHF {$row['artPrice']}</p>
-                                </div>";
-                            }
-                        ?>
+                                    <img data-flickity-lazyload="<?php echo $image ?>" class='carrousel-image' />
+                                    <p class='carrousel-brand'><?php echo $row['artBrand']; ?></p>
+                                    <p class='carrousel-model'><?php echo $row['artModel']; ?></p>
+                                    <p class='carrousel-price'>CHF <?php echo $row['artPrice']; ?></p>
+                                </div>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <p class="brands-text">Marques partenaires</p>
@@ -94,7 +92,7 @@ $highvalue = 8;
                             <div class="center-brands">
                                 <img loading="lazy" src="../../resources/icones/brands/Scarpa.svg"/>
                                 <img loading="lazy" src="../../resources/icones/brands/Petzl.svg"/>
-                                <img loading="lazy" src="../../resources/icones//brands/LaSportiva.svg"/>
+                                <img loading="lazy" src="../../resources/icones//brands/La Sportiva.svg"/>
                             </div>
                         </div>
                     </div>

@@ -26,10 +26,15 @@ $searchArticle= $_GET["idArticle"];
 
 try{
     $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
-    $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage FROM t_articles WHERE idArticle='$searchArticle'";
+    $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType FROM t_articles WHERE idArticle='$searchArticle'";
     $data = $conn->query($query)->fetchAll(PDO::FETCH_BOTH);
 }catch(PDOException $e){
 }
+
+
+
+
+
 
 ?>
 <?php
@@ -40,8 +45,23 @@ $brand = "../../resources/icones/Brands/" . $item['artBrand'] . ".svg";
 
 $model = $item['artModel'];
 $price = $item['artPrice']; 
+$fkType = $item['fkType'];
 }
+
+
+try{
+  $connArticles = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
+  $queryArticles = "SELECT idType, typName FROM t_type_articles WHERE idType='$fkType'";
+  $dataArticles = $connArticles->query($queryArticles)->fetchAll(PDO::FETCH_BOTH);
+}catch(PDOException $e){
+}
+
+foreach($dataArticles as $itemArticles){
+$typeArticle = $itemArticles['typName'];
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -68,7 +88,7 @@ $price = $item['artPrice'];
   <div class="ariane">
     <div class="ariane-products">Produits</div>
     <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
-    <div class="ariane-article">Chaussons d'escalade</div>
+    <div class="ariane-article"><?php echo $typeArticle ?></div>
   </div>
   <div class="article-info">
     <div class="article-data">

@@ -25,7 +25,7 @@
         </div>
         <div class="icones">
           <img loading="lazy" src="../../resources/icones/Account.svg" class="center"/>
-          <img loading="lazy" src="../../resources/icones/Love.svg" class="center hearth"/>
+          <!--<img loading="lazy" src="../../resources/icones/Love.svg" class="center hearth"/>-->
           <img loading="lazy" src="../../resources/icones/Basket.svg" class="center"/>
         </div>
       </div>
