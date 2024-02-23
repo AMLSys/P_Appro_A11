@@ -45,7 +45,8 @@ $brand = "../../resources/icones/Brands/" . $item['artBrand'] . ".svg";
 $soloBrand = $item['artBrand'];
 
 $model = $item['artModel'];
-$price = $item['artPrice']; 
+$price = $item['artPrice'];
+$description = $item['artDescription']; 
 $fkType = $item['fkType'];
 }
 
@@ -112,10 +113,12 @@ $typeArticle = $itemArticles['typName'];
                     <div class="buttons-text"><div class="basket-text">Ajouter l'article au panier</div></div>
                   </div>
                 </div>
-                <!--<div class="love-flex"><div class="love-background"><img loading="lazy" src="../../resources/icones/Love_Articles.svg" class= "love-image"/></div></div>-->
                 </div>
               </div>
             </div>
+          </div>
+          <div class="description">
+            <div class="description-text"><?php echo $description; ?></div>
           </div>
         </div>
       </div>

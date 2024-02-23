@@ -224,3 +224,22 @@
   .link-decoration{
     text-decoration: none;
   }
+
+  .description{
+    display: flex;
+    line-height: normal;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: 40px;
+    width: 60%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  .description-text{
+    font-family: "Montserrat", sans-serif;
+    flex-basis: auto;
+    font-size: 25px;
+    text-align: center;
+  }
