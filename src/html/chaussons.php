@@ -96,12 +96,35 @@ try{
                 </div>
             </button>
             <div id="filterDropdownMenu" class="dropdown-content">
+            <div class="line-filters">
                 <?php foreach($dataBrands as $brandName):?>
-                    <div class="line-filters">
-                        <input type="checkbox" >
-                        <a class="filterContent" href="#<?php echo $brandName['marName']; ?>"><?php echo $brandName['marName'] ;?></a>
+                        <div class="filter-line">
+                            <input class="filterCheckbox" type="checkbox" >
+                            <div class="filterContent" href="#<?php echo $brandName['marName']; ?>"><?php echo $brandName['marName'] ;?></div>
+                        </div>
+                        <?php endforeach ;?>
                     </div>
-                <?php endforeach ;?>
+                </div>
+            </div>
+
+            <button onclick="doDropMenu()"class="filters" id="filters">
+                <div class="content-filters">
+                    <section class="title-filters">
+                        <div class="text-title-filters">Marques</div>
+                        <img class="up-arrow" src="../../resources/icones/Up Arrow.svg" alt="Up Arrow"  id="Up Arrow"/>
+                    </section>
+                </div>
+            </button>
+            <div id="filterDropdownMenu" class="dropdown-content">
+            <div class="line-filters">
+                <?php foreach($dataBrands as $brandName):?>
+                        <div class="filter-line">
+                            <input class="filterCheckbox" type="checkbox" >
+                            <div class="filterContent" href="#<?php echo $brandName['marName']; ?>"><?php echo $brandName['marName'] ;?></div>
+                        </div>
+                        <?php endforeach ;?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
