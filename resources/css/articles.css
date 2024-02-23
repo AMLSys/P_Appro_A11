@@ -10,6 +10,7 @@
     font-size: 16px;
     color: #000;
     padding: 30px;
+    margin-left: 40px;
   }
   .ariane-products {
     font-family: "Montserrat", sans-serif;
@@ -43,6 +44,7 @@
     display: flex;
     width: 50%;
     margin-left: 0px;
+    margin-top: 3%;
   }
   @media (max-width: 991px) {
     .article-image {
@@ -217,4 +219,8 @@
     margin-bottom: 20%;
     margin-right: 15%;
     width: 80px;
+  }
+
+  .link-decoration{
+    text-decoration: none;
   }

@@ -42,6 +42,7 @@ try{
 foreach($data as $item){
 $image = "../../resources/images/articles/". $item['artImage'];
 $brand = "../../resources/icones/Brands/" . $item['artBrand'] . ".svg";
+$soloBrand = $item['artBrand'];
 
 $model = $item['artModel'];
 $price = $item['artPrice']; 
@@ -76,49 +77,48 @@ $typeArticle = $itemArticles['typName'];
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../resources/css/shared.css">
         <link rel="stylesheet" href="../../resources/css/articles.css">
-        
+        <link rel="icon" type="image/png" href="../../resources/icones/Bouldero_Logo.svg">
     </head>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('articles' => true)); ?></nav>
     <body>
-    
-    </body>
-
-<div class="articles">
-  <div class="ariane">
-    <div class="ariane-products">Produits</div>
-    <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
-    <div class="ariane-article"><?php echo $typeArticle ?></div>
-  </div>
-  <div class="article-info">
-    <div class="article-data">
-      <div class="article-image">
-        <img loading="lazy"src="<?php echo $image ?>"class="img-article"/>
-      </div>
-      <div class="article-brand">
-        <div class="product-infos">
-          <img loading="lazy" src="<?php echo $brand ?>" class="img-brand" />
-          <div class="articleModel"><?php echo $model ?></div>
-          <div class="articlePrice">CHF <?php echo $price ?></div>
-          <div class="articleTva">TVA incluse + Frais de livraison</div>
-          <div class="size-border">
-            <div class="buttons-data">
-              <div class="buttons-text">Choix de la pointure</div>
-              <img loading="lazy" src="../../resources/icones/Down Arrow.svg" class="down-arrow" />
+    <div class="articles">
+      <div class="ariane">
+        <div class="ariane-products">Produits</div>
+          <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
+          <a class="link-decoration" href="./<?php if($typeArticle == "Vêtements"){echo "vetements";}elseif($typeArticle == "Sac à Pof"){echo "sac-a-pof";}elseif($typeArticle == "Entraînement"){echo "entrainement";}else{echo $typeArticle;} ?>.php"><div class="ariane-article"><?php echo $typeArticle ?></div></a>
+          <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
+          <div class="ariane-article"><?php echo $soloBrand . " : " . $model ?></div>
+        </div>
+        <div class="article-info">
+          <div class="article-data">
+            <div class="article-image">
+              <img loading="lazy"src="<?php echo $image ?>"class="img-article"/>
             </div>
-          </div>
-          <div class="basket-background">
-            <div class="buttons-data">
-              <div class="buttons-text"><div class="basket-text">Ajouter l'article au panier</div></div>
+            <div class="article-brand">
+              <div class="product-infos">
+                <img loading="lazy" src="<?php echo $brand ?>" class="img-brand" />
+                <div class="articleModel"><?php echo $model ?></div>
+                <div class="articlePrice">CHF <?php echo $price ?></div>
+                <div class="articleTva">TVA incluse + Frais de livraison</div>
+                <div class="size-border">
+                  <div class="buttons-data">
+                    <div class="buttons-text">Choix de la pointure</div>
+                    <img loading="lazy" src="../../resources/icones/Down Arrow.svg" class="down-arrow"/>
+                  </div>
+                </div>
+                <div class="basket-background">
+                  <div class="buttons-data">
+                    <div class="buttons-text"><div class="basket-text">Ajouter l'article au panier</div></div>
+                  </div>
+                </div>
+                <!--<div class="love-flex"><div class="love-background"><img loading="lazy" src="../../resources/icones/Love_Articles.svg" class= "love-image"/></div></div>-->
+                </div>
+              </div>
             </div>
-          </div>
-          <!--<div class="love-flex"><div class="love-background"><img loading="lazy" src="../../resources/icones/Love_Articles.svg" class= "love-image"/></div></div>-->
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
+    </body>
     <footer><?php includeWithVariables('../../resources/siteparts/footer.php', array('articles' => 'TRUE')); ?></footer>
 </html>

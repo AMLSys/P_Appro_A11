@@ -56,6 +56,7 @@ foreach($data as $item){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../resources/css/shared.css">
         <link rel="stylesheet" href="../../resources/css/products.css">
+        <link rel="icon" type="image/png" href="../../resources/icones/Bouldero_Logo.svg">
     </head>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('accessoires' => true)); ?></nav>
@@ -64,7 +65,7 @@ foreach($data as $item){
             <?php if($i % 4 == 0){echo "<div class='product-column'>";} ?>
                 <a href="./articles.php?idArticle=<?php echo $item['idArticle']; ?>" class="card-link">
                     <article class="product-card">
-                    <img loading="lazy" src="<?php echo $image ?>" alt="SPIRIT IV Climbing Shoe" class="product-image" />
+                    <img loading="lazy" src="<?php echo $image ?>" alt="<?php echo $item['artModel']; ?>" class="product-image" />
                         <div class="product-title"><?php echo $item['artBrand']; ?></div>
                         <div class="product-model"><?php echo $item['artModel']; ?></div>
                         <div class="product-price">CHF <?php echo $item['artPrice']; ?></div>

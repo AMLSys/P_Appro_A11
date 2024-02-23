@@ -31,7 +31,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../resources/css/shared.css">
-        
+        <link rel="icon" type="image/png" href="../../resources/icones/Bouldero_Logo.svg">
     </head>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('entrainement' => true)); ?></nav>
