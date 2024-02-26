@@ -22,7 +22,8 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$searchArticle= $_GET["idArticle"];
+$searchArticle= $_POST["idArticle"];
+
 
 try{
     $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
