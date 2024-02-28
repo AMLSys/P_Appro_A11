@@ -105,7 +105,7 @@
     }
   }
   .articlePrice {
-    color: #f00;
+    color: rgb(77, 77, 77);
     align-self: start;
     margin-top: 12px;
     font: 700 26px "Montserrat", sans-serif;

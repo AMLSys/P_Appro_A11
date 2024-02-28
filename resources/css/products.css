@@ -20,6 +20,7 @@
     background-size: contains;
     margin: 13px;
     height: 510px;
+    transition: 0.6s;
   }
 
   .product-card:hover{
@@ -127,11 +128,14 @@
   flex-direction: column;
   justify-content: center;
   margin-right: 20px;
+  border-radius: 4px;
+  border-color: #dadada;
+  transition: 0.6s;
 }
 
 
 .filters:hover{
-  background-color: #FFD467;
+  background-color: #fdd878;
 }
 
 
@@ -247,7 +251,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   padding-top: 2px;
-  padding-right: 10%;
+  width: 80%;
 }
 
 .line-filters{
@@ -259,6 +263,7 @@
 .filterCheckbox{
   height: 20px;
   width: 20px;
+  margin-right: 10px;
 }
 
 .filter-line{
@@ -281,4 +286,39 @@
 
 .reset-All{
   all:initial();
+}
+
+.btn-filter{
+  background-color: #fab400;
+  align-self: center;
+  width: 90%;
+  margin-bottom: 10px;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  border-radius: 4px;
+  border: none;
+  height: 40px;
+  transition: 0.6s;
+}
+
+.btn-filter:hover{
+  background-color: #FFD467;
+}
+
+.activatedFilters{
+  background-color: #D99D04;
+}
+
+.activatedFilters:hover{
+  background-color: #D99D04;
+}
+
+.filterText{
+  font-family: "Montserrat", sans-serif;
+  color: #888888;
+  width: 20%;
+  align-self: center;
+  text-align: right;
+  margin-right: 10px;
 }

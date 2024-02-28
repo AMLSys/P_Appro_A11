@@ -68,7 +68,7 @@ $highvalue = 8;
                         </div>
                     <div class=""  data-flickity='{ "lazyLoad": 2, "initialIndex": 0, "wrapAround": true}'>
                         <?php foreach(array_slice($data, $lowvalue, $highvalue) as $row): $image = "../../resources/images/articles/". $row['artImage'];?>
-                        <form id="hiddenForm<?php echo $row['idArticle'];?>" method="POST" action="./articles.php">
+                        <form id="hiddenForm<?php echo $row['idArticle'];?>" method="POST" action="./Produit">
                                 <div class='carrousel-item'>
                                     <input type="hidden" name="idArticle" value="<?php echo $row['idArticle'];?>">
                                     <a href="javascript:{}" onclick="document.getElementById('hiddenForm<?php echo $row['idArticle'];?>').submit();" class="carrousel-link">

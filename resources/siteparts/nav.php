@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -11,22 +10,20 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../../web/resources/css/nav.css">
-        <link rel="icon" type="image/png" href="../../resources/icones/Bouldero_Logo.svg">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-        </style>
+        <link rel="stylesheet" href="../../../../Web/resources/css/nav.css">
+        <link rel="icon" type="image/png" href="../../../../Web/resources/icones/Bouldero_Logo.svg">
+        <script src="../../../../Web/resources/js/websiteFunctions.js"></script>
     </head>
     <nav>
         <div class="flex-nav">
             <div class="collored-line"></div>
                 <div class="nav-look">
                     <div class="nav-space">
-                        <a class="item <?php if ($chaussons == true) echo "collored"; ?>" href="../../../Web/src/html/chaussons.php">Chaussons</a>
-                        <a class="item <?php if ($sacapof == true) echo "collored"; ?>" href="../../../Web/src/html/sac-a-pof.php">Sac à Pof</a>
-                        <a class="item <?php if ($vetements == true) echo "collored"; ?>" href="../../../Web/src/html/vetements.php">Vêtements</a>
-                        <a class="item <?php if ($entrainement == true) echo "collored"; ?>" href="../../../Web/src/html/entrainement.php">Entraînement</a>
-                        <a class="item <?php if ($accessoires == true) echo "collored"; ?>" href="../../../Web/src/html/accessoires.php">Accessoires</a>
+                        <a class="item <?php if ($chaussons == true) echo "collored"; ?>" onclick="GetSelected(1)" href="../../../../Web/src/html/Produits/Chaussons">Chaussons</a>
+                        <a class="item <?php if ($sacapof == true) echo "collored"; ?>" onclick="GetSelected(2)" href="../../../../Web/src/html/Produits/Sac-a-pof">Sac à Pof</a>
+                        <a class="item <?php if ($vetements == true) echo "collored"; ?>" onclick="GetSelected(3)" href="../../../../Web/src/html/Produits/Vetements">Vêtements</a>
+                        <a class="item <?php if ($entrainement == true) echo "collored"; ?>" onclick="GetSelected(4)" href="../../../../Web/src/html/Produits/Entrainement">Entraînement</a>
+                        <a class="item <?php if ($accessoires == true) echo "collored"; ?>" onclick="GetSelected(5)" href="../../../../Web/src/html/Produits/Accessoires">Accessoires</a>
                     </div>
                 </div>
             </div>

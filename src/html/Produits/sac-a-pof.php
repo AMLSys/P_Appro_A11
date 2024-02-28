@@ -23,13 +23,15 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$fkType = 1;
+$fkType = 2;
 $queryDefault = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE fkType=$fkType";
 
-setcookie('query', $queryDefault);
+setcookie('query', $queryDefault, time()+3600);
+
 ?>
 
 <?php
+
 try{
     $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
     $query = $_COOKIE['query'];
@@ -42,7 +44,7 @@ $nbRows = $conn->query("SELECT count(*) from t_articles WHERE fkType=$fkType")->
 
 <?php 
 foreach($data as $item){
-    $image = "../../resources/images/articles/". $item['artImage'];
+    $image = "../../../resources/images/articles/". $item['artImage'];
     $brand = $item['artBrand'];
     $model = $item['artModel'];
     $price = $item['artPrice']; 
@@ -52,13 +54,12 @@ foreach($data as $item){
 ?>
 
 <?php
-
 try{
     $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
-    $queryBrands ="SELECT t_marque.marName, t_marque.idMarque  FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE t_articles.fkType=$fkType
-    GROUP BY t_marque.marName ORDER BY `t_marque`.`marName` ASC";
-    $dataBrands = $conn->query($queryBrands)->fetchAll(PDO::FETCH_BOTH);
+    $queryNbItems ="SELECT t_marque.marName, t_marque.idMarque, count(*) AS occurrences FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE fkType=$fkType GROUP BY fkMarque DESC, fkMarque";
+    $dataNbItems = $conn->query($queryNbItems)->fetchAll(PDO::FETCH_BOTH);
 }catch(PDOException $e){
+
 }
 
 ?>
@@ -68,26 +69,26 @@ try{
         <!--
 		    Author: Aurélien Lahaye
 		    Date: 07.02.2024
-		    Description: Chaussons page of the webiste
+		    Description: Acessory page of the webiste
 	    -->
-        <title>Bouldero - Chaussons</title>
+        <title>Bouldero - Acessory</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../resources/css/shared.css">
-        <link rel="stylesheet" href="../../resources/css/products.css">
+        <link rel="stylesheet" href="../../../resources/css/shared.css">
+        <link rel="stylesheet" href="../../../resources/css/products.css">
         <link rel="icon" type="image/png" href="../../resources/icones/Bouldero_Logo.svg">
-        <script src="../../resources/js/websiteFunctions.js"></script>
+        <script src="../../../resources/js/websiteFunctions.js"></script>
     </head>
-    <header><?php require('../../resources/siteparts/header.php'); ?></header>
-    <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('chaussons' => true)); ?></nav>
+    <header><?php require('../../../resources/siteparts/header.php'); ?></header>
+    <nav><?php includeWithVariables('../../../resources/siteparts/nav.php', array('sacapof' => true)); ?></nav>
     <body>
     <div class="ariane">
         <div class="ariane-products">Produits</div>
-        <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
-        <div class="ariane-article">Chaussons</div>
+        <img loading="lazy" src="../../../resources/icones/Right Arrow.svg" class="right-arrow" />
+        <div class="ariane-article">Sac à pof</div>
     </div>
     <div class="flex-nb-products">
-        <div class="title-nb-products">Chaussons</div>
+        <div class="title-nb-products">Sac à pof</div>
         <div class="nb-products"><?php echo $nbRows;?> Articles</div>
     </div>
     <div class="filter-bar">
@@ -96,29 +97,30 @@ try{
                 <div class="content-filters">
                     <section class="title-filters">
                         <div class="text-title-filters">Marques</div>
-                        <img class="up-arrow" src="../../resources/icones/Up Arrow.svg" alt="Up Arrow"  id="Up Arrow"/>
+                        <img class="up-arrow" src="../../../resources/icones/Up Arrow.svg" alt="Up Arrow"  id="Up Arrow"/>
                     </section>
                 </div>
             </button>
             <div id="filterDropdownMenu" class="dropdown-content">
                 <div class="line-filters">
                     <table id="tblFilters">
-                            <?php foreach($dataBrands as $brandName):?>
+                            <?php foreach($dataNbItems as $brandName):?>
                                 <td class="filter-line">
                                     <input type="checkbox" class="filterCheckbox" value="<?php echo $brandName['idMarque'];?>">
                                     <div class="filterContent" href="#<?php echo $brandName['marName']; ?>"><?php echo $brandName['marName'] ;?></div>
+                                    <div class="filterText"><?php echo $brandName["occurrences"];?></div>
                                 </td>
                                 <?php endforeach ;?>
                             </table>
                         </div>
-                    <input type="button" value="Filtrer" onclick="GetSelected(<?php echo $fkType ;?>)"></button>
+                    <input class="btn-filter" type="button" value="Filtrer" onclick="GetSelected(<?php echo $fkType ;?>)"></input>
                 </div>
             </div>
         </div>
     </div>
-        <?php foreach ($data as $item): $image = "../../resources/images/articles/". $item['artImage']; ?>
+        <?php foreach ($data as $item): $image = "../../../resources/images/articles/". $item['artImage']; ?>
             <?php if($i % 4 == 0){echo "<div class='product-column'>";} ?>
-                <form id="hiddenForm<?php echo $item['idArticle'];?>" method="POST" action="./articles.php" >
+                <form id="hiddenForm<?php echo $item['idArticle'];?>" method="POST" action="../Produit" >
                     <input type="hidden" name="idArticle" value="<?php echo $item['idArticle'];?>">
                     <a href="javascript:{}" onclick="document.getElementById('hiddenForm<?php echo $item['idArticle'];?>').submit();" class="card-link">
                         <article class="product-card">
@@ -134,5 +136,5 @@ try{
             <?php endforeach; ?>
                             </div>
     </body>
-    <footer><?php includeWithVariables('../../resources/siteparts/footer.php', array('chaussons' => 'TRUE')); ?></footer>
+    <footer><?php includeWithVariables('../../../resources/siteparts/footer.php', array('sacapof' => 'TRUE')); ?></footer>
 </html>

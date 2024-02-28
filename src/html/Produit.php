@@ -88,7 +88,7 @@ $typeArticle = $itemArticles['typName'];
       <div class="ariane">
         <div class="ariane-products">Produits</div>
           <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
-          <a class="link-decoration" href="./<?php if($typeArticle == "Vêtements"){echo "vetements";}elseif($typeArticle == "Sac à Pof"){echo "sac-a-pof";}elseif($typeArticle == "Entraînement"){echo "entrainement";}else{echo $typeArticle;} ?>.php"><div class="ariane-article"><?php echo $typeArticle ?></div></a>
+          <a class="link-decoration" href="./Produits/<?php if($typeArticle == "Vêtements"){echo "Vetements";}elseif($typeArticle == "Sac à pof"){echo "Sac-a-pof";}elseif($typeArticle == "Entraînement"){echo "Entrainement";}else{echo $typeArticle;} ?>"><div class="ariane-article"><?php echo $typeArticle ?></div></a>
           <img loading="lazy" src="../../resources/icones/Right Arrow.svg" class="right-arrow" />
           <div class="ariane-article"><?php echo $soloBrand . " : " . $model ?></div>
         </div>

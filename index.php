@@ -8,6 +8,6 @@
 	    -->
         <title>Redirection vers le site</title>
         <meta charset="utf-8" />
-        <meta http-equiv="refresh" content="0; URL=src/html/homepage.php">
+        <meta http-equiv="refresh" content="0; URL=src/html/bouldero">
     </head>
 </html>
