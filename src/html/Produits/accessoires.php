@@ -1,67 +1,28 @@
+<?php  include '../../../../Web/resources/php/scripts.php'; ?>
+
 <?php
-            function includeWithVariables($filePath, $variables = array(), $print = true)
-            {
-            // Extract the variables to a local namespace
-            extract($variables);
-
-            // Start output buffering
-            ob_start();
-
-            // Include the template file
-            require $filePath;
-
-            // End buffering and return its contents
-            $output = ob_get_clean();
-            if (!$print) {
-                return $output;
-            }
-            echo $output;
-            }
+    $fkType = 5;
+    $queryDefault = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE fkType=$fkType";
+    $i = 0;
 ?>
+<?php setcookie('query', $queryDefault, time()+3600); ?>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$fkType = 5;
-$queryDefault = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE fkType=$fkType";
-
-setcookie('query', $queryDefault, time()+3600);
-
-?>
-
-<?php
-
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
     $query = $_COOKIE['query'];
-    $data = $conn->query($query)->fetchAll(PDO::FETCH_BOTH);
-}catch(PDOException $e){
-}
-
-$nbRows = $conn->query("SELECT count(*) from t_articles WHERE fkType=$fkType")->fetchColumn();
+    $queryNbRows = "SELECT count(*) from t_articles WHERE fkType=$fkType";
+    $queryNbItems ="SELECT t_marque.marName, t_marque.idMarque, count(*) AS occurrences FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE fkType=$fkType GROUP BY fkMarque DESC, fkMarque";
+    $data = connectToDatabase($query);
+    $nbRows = findNumberRows($queryNbRows);
+    $dataNbItems = connectToDatabase($queryNbItems);
 ?>
 
 <?php 
-foreach($data as $item){
-    $image = "../../../resources/images/articles/". $item['artImage'];
-    $brand = $item['artBrand'];
-    $model = $item['artModel'];
-    $price = $item['artPrice']; 
+    foreach($data as $item){
+        $image = "../../../resources/images/articles/". $item['artImage'];
+        $brand = $item['artBrand'];
+        $model = $item['artModel'];
+        $price = $item['artPrice']; 
     }
-
-    $i = 0;
-?>
-
-<?php
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
-    $queryNbItems ="SELECT t_marque.marName, t_marque.idMarque, count(*) AS occurrences FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE fkType=$fkType GROUP BY fkMarque DESC, fkMarque";
-    $dataNbItems = $conn->query($queryNbItems)->fetchAll(PDO::FETCH_BOTH);
-}catch(PDOException $e){
-
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -134,7 +95,7 @@ try{
                 </form>
                 <?php $i++; ?>
             <?php endforeach; ?>
-                            </div>
+            </div>
     </body>
     <footer><?php includeWithVariables('../../../resources/siteparts/footer.php', array('accessoires' => 'TRUE')); ?></footer>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -17,10 +18,10 @@
 <div class="flex-header">
   <div class="header-look">
     <div class="header-space">
-        <a href="../../../../../Web/src/html/bouldero" ><img loading="lazy" src="../../../../Web/resources/images/Logo.svg" class="bouldero-logo" /></a>
+        <a href="../../../../../Web/src/html/Bouldero" ><img loading="lazy" src="../../../../Web/resources/images/Logo.svg" class="bouldero-logo" /></a>
       <div class="header-end">
         <div class="search">
-          <div class="font-montserrat">Blog</div>
+            <a class="font-montserrat <?php if ($blog == true) echo "collored"; ?>" href="../../../../../Web/src/html/Blog">Blog</a>
           <img loading="lazy" src="../../../../Web/resources/icones/Search_White.svg" class="center"/>
         </div>
         <div class="icones">

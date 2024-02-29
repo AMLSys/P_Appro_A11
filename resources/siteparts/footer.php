@@ -27,10 +27,10 @@
           <div class="topline-text">
             <div class="top-line-text">
               <div class="top-linetext">
-                <div class="top-item">Compte</div>
-                <div class="top-item">Panier</div>
-                <div class="top-item">Favoris</div>
-                <div class="top-item">Blog</div>
+                <div class="top-item <?php if ($compte == true) echo "collored"; ?>">Compte</div>
+                <div class="top-item <?php if ($panier == true) echo "collored"; ?>">Panier</div>
+                <div class="top-item <?php if ($favoris == true) echo "collored"; ?>">Favoris</div>
+                <div class="top-item <?php if ($blog == true) echo "collored"; ?>">Blog</div>
                 <div class="search-bar">
                   <div class="search-text">Recherches...</div>
                   <img loading="lazy" src="../../../../Web/resources/icones/Search_Black.svg" class="search-img"/>

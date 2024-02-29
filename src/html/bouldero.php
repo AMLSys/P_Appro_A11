@@ -1,44 +1,8 @@
-<?php
-            function includeWithVariables($filePath, $variables = array(), $print = true)
-            {
-            // Extract the variables to a local namespace
-            extract($variables);
-
-            // Start output buffering
-            ob_start();
-
-            // Include the template file
-            require $filePath;
-
-            // End buffering and return its contents
-            $output = ob_get_clean();
-            if (!$print) {
-                return $output;
-            }
-            echo $output;
-            }
-?>
-
+<?php  include '../../../Web/resources/php/scripts.php'; ?>
 <?php 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
-    $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage FROM t_articles";
-    $data = $conn->query($query)->fetchAll(PDO::FETCH_BOTH);
-}catch(PDOException $e){
-}
-
-?>
-
-<?php
-$lowvalue = 0;
-$highvalue = 8;
-
-?>
-
+$query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage FROM t_articles";
+$data = connectToDatabase($query); ?>
+<?php $lowvalue = 0; $highvalue = 8; ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>

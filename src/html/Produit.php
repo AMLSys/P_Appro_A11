@@ -1,71 +1,28 @@
-<?php
-            function includeWithVariables($filePath, $variables = array(), $print = true)
-            {
-            // Extract the variables to a local namespace
-            extract($variables);
-
-            // Start output buffering
-            ob_start();
-
-            // Include the template file
-            require $filePath;
-
-            // End buffering and return its contents
-            $output = ob_get_clean();
-            if (!$print) {
-                return $output;
-            }
-            echo $output;
-            }
-        ?>
+<?php  include '../../../Web/resources/php/scripts.php'; ?>
 <?php 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$searchArticle= $_POST["idArticle"];
-
-
-try{
-    $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
-    $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType FROM t_articles WHERE idArticle='$searchArticle'";
-    $data = $conn->query($query)->fetchAll(PDO::FETCH_BOTH);
-}catch(PDOException $e){
-}
-
-
-
-
-
-
-?>
+  $searchArticle= $_POST["idArticle"];
+  $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType FROM t_articles WHERE idArticle='$searchArticle'";
+  $data = connectToDatabase($query);?>
 <?php
 
 foreach($data as $item){
-$image = "../../resources/images/articles/". $item['artImage'];
-$brand = "../../resources/icones/Brands/" . $item['artBrand'] . ".svg";
-$soloBrand = $item['artBrand'];
+  $image = "../../resources/images/articles/". $item['artImage'];
+  $brand = "../../resources/icones/Brands/" . $item['artBrand'] . ".svg";
+  $soloBrand = $item['artBrand'];
 
-$model = $item['artModel'];
-$price = $item['artPrice'];
-$description = $item['artDescription']; 
-$fkType = $item['fkType'];
+  $model = $item['artModel'];
+  $price = $item['artPrice'];
+  $description = $item['artDescription']; 
+  $fkType = $item['fkType'];
 }
 
-
-try{
-  $connArticles = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
   $queryArticles = "SELECT idType, typName FROM t_type_articles WHERE idType='$fkType'";
-  $dataArticles = $connArticles->query($queryArticles)->fetchAll(PDO::FETCH_BOTH);
-}catch(PDOException $e){
-}
+  $dataArticles = connectToDatabase($queryArticles);
 
 foreach($dataArticles as $itemArticles){
-$typeArticle = $itemArticles['typName'];
+  $typeArticle = $itemArticles['typName'];
 }
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -103,9 +60,9 @@ $typeArticle = $itemArticles['typName'];
                 <div class="articleModel"><?php echo $model ?></div>
                 <div class="articlePrice">CHF <?php echo $price ?></div>
                 <div class="articleTva">TVA incluse + Frais de livraison</div>
-                <div class="size-border">
+                <div class="size-border <?php if ($fkType == 2){echo "hidden";}elseif($fkType == 4){echo "hidden";}elseif($fkType == 5){echo "hidden";} ;?>">
                   <div class="buttons-data">
-                    <div class="buttons-text">Choix de la pointure</div>
+                    <div class="buttons-text"><?php if ($fkType == 1){echo "Choix de la pointure";}else{echo "Choix de la taille";} ;?></div>
                     <img loading="lazy" src="../../resources/icones/Down Arrow.svg" class="down-arrow"/>
                   </div>
                 </div>

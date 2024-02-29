@@ -73,6 +73,9 @@ html, header{
   .font-montserrat {
     font-family: 'Montserrat', sans-serif;
     align-self: center;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s;
   }
   .icones {
     justify-content: space-between;
@@ -98,4 +101,10 @@ html, header{
   filter: invert(22%) sepia(73%) saturate(100000%) hue-rotate(355deg) brightness(114%) contrast(129%);
 }
 
+.font-montserrat:hover{
+  color: #FAB400;
+}
 
+.collored{
+  color: #FAB400;
+}
