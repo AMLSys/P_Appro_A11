@@ -1,0 +1,78 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.imgArticle{
+    min-width: 700px;
+    height: 400px;
+}
+
+.titleArticle{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 650;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.descArticle{
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.ariane{
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.right-arrow{
+    height: 12px;
+}
+
+.link-decoration{
+    text-decoration: none;
+}
+
+.subtitleArticle{
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.mainPointsArticle{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pointsArticle{
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+
+.titlePointsArticle{
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.endTextArticle{
+    margin-top: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+

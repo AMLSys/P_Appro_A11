@@ -1,7 +1,9 @@
 <?php  include '../../../Web/resources/php/scripts.php'; ?>
 <?php 
 $query = "SELECT * FROM t_blog_articles";
-$data = connectToDatabase($query);?>
+$data = connectToDatabase($query);
+$i = 0;
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -21,18 +23,30 @@ $data = connectToDatabase($query);?>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('blog' => 'TRUE')); ?></nav>
     <body>
         <div class="articlesList">
-        <?php foreach($data as $articles) : ?>
-            <div class="articles">
-                <img href="">
-                <div class="titreArticles"><?php echo $articles['bloArtName'];?></div>
-                <div class="descArticles"><?php echo $articles['bloPreDescription']; ?></div>
-                <div class="dateArticles"><?php echo $articles['bloArtDate'];?></div>
-                <div class="auteurArticles"><?php echo $articles['bloArtAuteur'];?></div>
-                <button class="buttonArticles">
-                    <div class="textArticles">Lire l'article</div>
-                </button>
-            </div>
+        <?php foreach($data as $articles): ?>
+            <form id="hiddenForm<?php echo $articles['idBlog'];?>" method="POST" action="./ArticlesBlog" class="formArticles">
+                <div class="articles">
+                    <img loading="lazy" src="<?php echo $image = "../../resources/images/Blog/". $articles['bloImgCover']; ?>" class="imgArticles"/>
+                    <div class="insideArticles">
+                        <div class="infosArticles">
+                            <div class="titreArticles"><?php echo $articles['bloArtName'];?></div>
+                            <div class="descArticles"><?php echo $articles['bloPreDescription']; ?></div>
+                        </div>
+                        <div class="bottomLineArticles">
+                            <div class="leftInfosArticles">
+                                <div class="dateArticles"><?php echo $articles['bloArtDate'];?></div>
+                                <div class="auteurArticles">Par: <?php echo $articles['bloArtAuteur'];?></div>
+                            </div>
+                            <input type="hidden" name="idBlog" value="<?php echo $articles['idBlog'];?>">
+                            <button href="javascript:{}" onclick="document.getElementById('hiddenForm<?php echo $articles['idBlog'];?>').submit();" class="buttonArticles">
+                                <div class="textButtonArticles">Lire l'article</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </form>
         <?php endforeach; ?>
+        </div>
         </div>
     </body>
     <footer><?php includeWithVariables('../../resources/siteparts/footer.php', array('blog' => 'TRUE')); ?></footer>

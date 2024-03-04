@@ -22,6 +22,8 @@ $data = connectToDatabase($query); ?>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('homepage' => 'TRUE')); ?></nav>
     <body>
+        
+    <img loading="lazy" href="../../resources/images/Blog/best_sportclimbing_spot.png" class="imgArticle"/>
         <div class="flex-body">
             <div class="body-background">
                 <img src="../../resources/images/Promotions.svg" class="promotions"/>
