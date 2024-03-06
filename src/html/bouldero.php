@@ -2,6 +2,7 @@
 <?php 
 $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage FROM t_articles";
 $data = connectToDatabase($query); ?>
+<?php session_start(); ?>
 <?php $lowvalue = 0; $highvalue = 8; ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,8 +23,6 @@ $data = connectToDatabase($query); ?>
     <header><?php require('../../resources/siteparts/header.php'); ?></header>
     <nav><?php includeWithVariables('../../resources/siteparts/nav.php', array('homepage' => 'TRUE')); ?></nav>
     <body>
-        
-    <img loading="lazy" href="../../resources/images/Blog/best_sportclimbing_spot.png" class="imgArticle"/>
         <div class="flex-body">
             <div class="body-background">
                 <img src="../../resources/images/Promotions.svg" class="promotions"/>
@@ -69,4 +68,4 @@ $data = connectToDatabase($query); ?>
         </div>
     </body>
     <footer><?php includeWithVariables('../../resources/siteparts/footer.php', array('homepage' => 'TRUE')); ?></footer>
-</html>
+</html> 

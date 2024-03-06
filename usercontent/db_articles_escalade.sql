@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 28 fév. 2024 à 14:31
+-- Généré le : mer. 06 mars 2024 à 14:18
 -- Version du serveur :  10.11.1-MariaDB
 -- Version de PHP : 8.0.1
 
@@ -84,6 +84,34 @@ INSERT INTO `t_articles` (`idArticle`, `artBrand`, `artModel`, `artPrice`, `artD
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `t_blog_articles`
+--
+
+CREATE TABLE `t_blog_articles` (
+  `idBlog` int(11) NOT NULL,
+  `bloArtName` varchar(100) NOT NULL,
+  `bloArtCategorie` varchar(30) NOT NULL,
+  `bloArtDescription` varchar(5000) NOT NULL,
+  `bloArtDate` date NOT NULL,
+  `bloImgCover` varchar(50) NOT NULL,
+  `bloArtAuteur` varchar(30) NOT NULL,
+  `bloPreDescription` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `t_blog_articles`
+--
+
+INSERT INTO `t_blog_articles` (`idBlog`, `bloArtName`, `bloArtCategorie`, `bloArtDescription`, `bloArtDate`, `bloImgCover`, `bloArtAuteur`, `bloPreDescription`) VALUES
+(1, 'Choisir ces chaussures d\'escalade de bloc', 'Sport', '<div class=\"subtitleArticle\">\r\nLes chaussures d\'escalade sont des équipements cruciaux pour tout grimpeur de bloc sérieux. Lorsque vous grimpez, vos pieds sont votre principal point de contact avec la paroi, et le bon choix de chaussures peut faire toute la différence entre une ascension réussie et une chute frustrante. Voici quelques conseils pour choisir les meilleures chaussures d\'escalade de bloc :\r\n</div>\r\n<div class=\"mainPointsArticle\">\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">1. Ajustement et confort :</div> La première chose à considérer est le confort. Vos chaussures doivent être bien ajustées sans être trop serrées. Les chaussures d\'escalade de bloc doivent offrir un bon soutien à votre pied tout en vous permettant une certaine liberté de mouvement.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">2. Sensibilité :</div> Les chaussures d\'escalade de bloc doivent être suffisamment sensibles pour vous permettre de sentir la roche sous vos pieds. Cela vous aidera à trouver des prises précises et à vous équilibrer correctement.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">3. Forme et asymétrie :</div> La forme et l\'asymétrie des chaussures d\'escalade de bloc peuvent varier en fonction de votre style de grimpe. Les chaussures plus asymétriques sont généralement meilleures pour les surplombs et les petites prises, tandis que les chaussures plus plates peuvent être meilleures pour les dalles et les voies verticales.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">4. Type de fermeture :</div> Les chaussures d\'escalade de bloc sont généralement disponibles avec différents types de fermeture, tels que lacets, velcro ou chaussons. Choisissez celui qui vous convient le mieux en fonction de votre préférence et de votre facilité d\'utilisation.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">5. Matériaux :</div> Les matériaux utilisés dans la construction des chaussures d\'escalade de bloc peuvent affecter leur performance et leur durabilité. Recherchez des chaussures fabriquées avec des matériaux de haute qualité qui offrent à la fois une bonne adhérence et une bonne résistance à l\'usure.\r\n</div>\r\n</div>\r\n<div class=\"endTextArticle\">\r\nEn fin de compte, le meilleur moyen de choisir des chaussures d\'escalade de bloc est d\'essayer différentes paires et de trouver celles qui conviennent le mieux à votre style de grimpe et à la forme de votre pied. Assurez-vous de consulter un professionnel dans un magasin spécialisé pour obtenir des conseils personnalisés.\r\n</div>', '2024-02-29', 'choose_your_climbing_shoes.svg', 'ChatGPT', 'Les chaussures d\'escalade sont des équipements cruciaux pour tout grimpeur de bloc sérieux. Lorsque vous grimpez, vos pieds sont votre principal point de contact avec la paroi, et le bon choix de chaussures peut faire toute la différence entre...'),
+(2, 'Progresser en escalade comme un pro', 'Sport', '<div class=\"subtitleArticle\">\r\nL\'escalade est un sport exigeant qui demande à la fois force, agilité et technique. Que vous soyez débutant ou grimpeur expérimenté, voici quelques conseils pour progresser en escalade comme un pro :\r\n</div>\r\n<div class=\"mainPointsArticle\">\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">1. Entraînement spécifique :</div> Pour améliorer vos performances en escalade, rien ne vaut un entraînement spécifique. Travaillez régulièrement sur des exercices qui ciblent vos points faibles, que ce soit la force des doigts, la technique des pieds ou l\'endurance.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">2. Variez les styles de grimpe :</div> Pour devenir un grimpeur polyvalent, il est important de varier les styles de grimpe. Essayez différents types de voies, du bloc à la grande voie en passant par la falaise, et adaptez votre technique en conséquence.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">3. Travaillez votre mental :</div> L\'escalade est autant un défi mental qu\'un défi physique. Apprenez à gérer le stress et la peur, à visualiser votre progression et à rester concentré sur vos objectifs, même lorsque la paroi semble infranchissable.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">4. Écoutez votre corps :</div> L\'escalade peut être éprouvante pour le corps, alors assurez-vous de lui accorder le repos et la récupération nécessaires. Écoutez les signaux de fatigue et d\'épuisement, et n\'hésitez pas à faire des pauses ou à vous accorder des jours de repos lorsque cela est nécessaire.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">5. Apprenez des autres : </div>L\'escalade est aussi une communauté, alors n\'hésitez pas à apprendre des autres grimpeurs. Observez leur technique, posez-leur des questions sur leur entraînement et partagez vos propres expériences pour progresser ensemble.\r\n</div>\r\n</div>\r\n<div class=\"endTextArticle\">\r\nEn suivant ces conseils et en restant motivé, vous pourrez progresser en escalade et atteindre de nouveaux sommets !\r\n</div>', '2024-02-29', 'progress_inclimb_like_a_pro.svg', 'ChatGPT', 'L\'escalade est un sport exigeant qui demande à la fois force, agilité et technique. Que vous soyez débutant ou grimpeur expérimenté, voici quelques conseils pour progresser en escalade comme un...'),
+(3, 'Les meilleurs sites escalade du monde', 'Voyage', '<div class=\"subtitleArticle\">\r\nL\'escalade est un sport qui vous emmène aux quatre coins du monde, à la découverte de paysages époustouflants et de parois mythiques. Voici une sélection des meilleurs sites d\'escalade du monde entier :\r\n</div>\r\n<div class=\"mainPointsArticle\">\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">1. Yosemite Valley, États-Unis :</div> Réputé pour ses grandes parois de granite et ses voies emblématiques comme \"El Capitan\" et \"Half Dome\", Yosemite est un incontournable pour tout grimpeur.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">2. Kalymnos, Grèce :</div> Avec ses falaises calcaires et son climat méditerranéen, Kalymnos est un paradis pour les grimpeurs sportifs. Les voies sont bien équipées et offrent une grande variété de styles et de difficultés.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">3. Siurana, Espagne :</div> Niché au cœur de la Catalogne, Siurana est célèbre pour ses voies techniques et verticales, ainsi que pour ses paysages à couper le souffle. C\'est un endroit idéal pour repousser ses limites en escalade sportive.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">4. Fontainebleau, France :</div> Surnommé \"Bleau\" par les locaux, Fontainebleau est l\'un des plus grands sites de bloc au monde. Avec ses milliers de blocs de grès disséminés dans la forêt, c\'est un lieu magique pour les amoureux du bloc.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">5. Rodellar, Espagne :</div> Situé dans les gorges de la Sierra de Guara, Rodellar est réputé pour ses voies déversantes et athlétiques, ainsi que pour son ambiance conviviale. C\'est un spot idéal pour les grimpeurs en quête de sensations fortes.\r\n</div>\r\n</div>\r\n<div class=\"endTextArticle\">\r\nQue vous soyez amateur ou grimpeur confirmé, ces sites d\'escalade vous promettent des aventures inoubliables et des défis à la hauteur de vos attentes !\r\n</div>', '2024-02-29', 'best_sportclimbing_spot_img1.svg', 'ChatGPT', 'L\'escalade est un sport qui vous emmène aux quatre coins du monde, à la découverte de paysages époustouflants et de parois mythiques. Voici une sélection des meilleurs sites d\'escalade du...'),
+(4, 'Les meilleurs conseils pour réussir sa première longue voie', 'Conseils', '<div class=\"subtitleArticle\">\r\nLa grimpe en longue voie est une expérience unique et passionnante qui demande à la fois compétence technique et préparation mentale. Voici quelques conseils pour réussir votre première grande voie :\r\n</div>\r\n<div class=\"mainPointsArticle\">\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">1. Choisissez une voie adaptée :</div> Pour votre première longue voie, optez pour une voie bien équipée et de difficulté modérée. Assurez-vous de connaître le niveau de difficulté et les particularités de la voie avant de vous lancer.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">2. Préparez-vous mentalement :</div> La grimpe en longue voie peut être intimidante, alors préparez-vous mentalement en visualisant la voie, en vous fixant des objectifs réalistes et en restant concentré sur chaque mouvement.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">3. Maîtrisez les manœuvres de corde :</div> Avant de partir en longue voie, assurez-vous de maîtriser les manœuvres de corde essentielles, comme l\'assurage en tête, la gestion des relais et les manœuvres de rappel. Si nécessaire, faites-vous accompagner par un guide expérimenté.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">4. Gérez votre matériel :</div> Assurez-vous d\'avoir le matériel nécessaire pour la voie, y compris les dégaines, les friends, les coinceurs et les cordes. Vérifiez votre équipement avant de partir et assurez-vous de savoir comment l\'utiliser correctement.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">5. Soyez prudent et responsable :</div> La sécurité est primordiale en escalade, surtout en longue voie. Respectez les règles de sécurité, communiquez clairement avec votre partenaire et soyez conscient des conditions météorologiques et des dangers potentiels sur la paroi.\r\n</div>\r\n</div>\r\n<div class=\"endTextArticle\">\r\nEn suivant ces conseils et en restant calme et concentré, vous pourrez profiter pleinement de votre première longue voie et vivre une expérience inoubliable en montagne.\r\n</div>', '2024-03-04', 'long_route_first_time.svg', 'ChatGPT', 'La grimpe en longue voie est une expérience unique et passionnante qui demande à la fois compétence technique et préparation...'),
+(5, 'Les plus beaux sites d\'escalade en France', 'Voyage', '<div class=\"subtitleArticle\">\r\nLa France regorge de sites d\'escalade exceptionnels, allant des falaises calcaires du sud aux massifs granitiques des Alpes. Voici une sélection des plus beaux sites d\'escalade à découvrir en France :\r\n</div>\r\n<div class=\"mainPointsArticle\">\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">1. Les Calanques, Provence-Alpes-Côte d\'Azur :</div> Nichées entre Marseille et Cassis, les Calanques offrent des falaises abruptes plongeant dans la mer Méditerranée. Les voies sont variées et offrent des panoramas à couper le souffle.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">2. Chamonix-Mont-Blanc, Auvergne-Rhône-Alpes :</div> Chamonix est un paradis pour les grimpeurs, avec ses nombreuses voies de granite et ses vues imprenables sur le Mont-Blanc. Que vous soyez amateur ou expert, vous trouverez des défis à votre mesure dans la vallée de Chamonix.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">3. Buoux, Provence-Alpes-Côte d\'Azur :</div> Buoux est célèbre pour ses voies techniques et athlétiques taillées dans le calcaire. C\'est un spot incontournable pour les grimpeurs en quête de sensations fortes dans le sud de la France.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">4. Verdon, Provence-Alpes-Côte d\'Azur :</div> Le Verdon est le plus grand canyon d\'Europe et un site d\'escalade légendaire. Les voies sont longues et exposées, offrant des défis uniques aux grimpeurs les plus audacieux.\r\n</div>\r\n<div class=\"pointsArticle\">\r\n<div class=\"titlePointsArticle\">5. Fontainebleau, Île-de-France :</div> Fontainebleau est mondialement connu pour ses blocs de grès disséminés dans la forêt de Fontainebleau. Avec ses milliers de problèmes de bloc de toutes les difficultés, c\'est un lieu magique pour les amateurs de bloc.\r\n</div>\r\n</div>\r\n<div class=\"endTextArticle\">\r\nQue vous soyez à la recherche de sensations fortes ou de paysages à couper le souffle, ces sites d\'escalade en France vous promettent des aventures inoubliables et des souvenirs à partager.\r\n</div>', '2024-03-04', 'fontainbleau_france_climbing_bouldersroutes.svg', 'ChatGPT', 'La France regorge de sites d\'\'escalade exceptionnels, allant des falaises calcaires du sud aux massifs granitiques des...');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `t_marque`
 --
 
@@ -131,6 +159,34 @@ INSERT INTO `t_type_articles` (`idType`, `typName`, `typDescription`) VALUES
 (4, 'Entraînement', 'Tout ce qui touche à l\'entrainement, des doigts, des mains, des bras...'),
 (5, 'Accessoires', 'Lunettes escalade, cordes, baudriers...');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_user_account`
+--
+
+CREATE TABLE `t_user_account` (
+  `idUsrAcc` int(11) NOT NULL,
+  `usrUsername` varchar(50) NOT NULL,
+  `usrEmail` varchar(50) NOT NULL,
+  `usrPassword` varchar(50) NOT NULL,
+  `usrCreate_DateTime` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `t_user_account`
+--
+
+INSERT INTO `t_user_account` (`idUsrAcc`, `usrUsername`, `usrEmail`, `usrPassword`, `usrCreate_DateTime`) VALUES
+(5, 'Adam.Ondra', 'adam.ondra@ifsc.cz', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 07:41:12'),
+(6, 'Ai.Mori', 'ai.mori@ifsc.jp', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 07:52:59'),
+(7, 'Alex.Megos', 'alex.megos@ifsc.de', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 07:54:14'),
+(9, 'Janja.Garnbret', 'janja.garnbret@ifsc.si', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 08:05:11'),
+(10, 'Sascha.Lehmann', 'sascha.lehmann@ifsc.de', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 13:05:15'),
+(11, 'Brooke.Raboutou', 'brooke.raboutou@ifsc.us', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 13:09:35'),
+(12, 'Magnus.Midtbo', 'magnus.midtbo@youtube.no', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 13:11:56'),
+(23, 'Miho.Nonaka', 'Miho.Nonaka@ifsc.jp', '05ef603ac63ff541126d724aa6ddb3aa', '2024-03-06 13:45:28');
+
 --
 -- Index pour les tables déchargées
 --
@@ -143,6 +199,13 @@ ALTER TABLE `t_articles`
   ADD KEY `idArticle` (`idArticle`),
   ADD KEY `fkType` (`fkType`),
   ADD KEY `fkMarque` (`fkMarque`);
+
+--
+-- Index pour la table `t_blog_articles`
+--
+ALTER TABLE `t_blog_articles`
+  ADD PRIMARY KEY (`idBlog`),
+  ADD KEY `idBlog` (`idBlog`);
 
 --
 -- Index pour la table `t_marque`
@@ -159,6 +222,12 @@ ALTER TABLE `t_type_articles`
   ADD KEY `idType` (`idType`);
 
 --
+-- Index pour la table `t_user_account`
+--
+ALTER TABLE `t_user_account`
+  ADD PRIMARY KEY (`idUsrAcc`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -167,6 +236,12 @@ ALTER TABLE `t_type_articles`
 --
 ALTER TABLE `t_articles`
   MODIFY `idArticle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT pour la table `t_blog_articles`
+--
+ALTER TABLE `t_blog_articles`
+  MODIFY `idBlog` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `t_marque`
@@ -179,6 +254,12 @@ ALTER TABLE `t_marque`
 --
 ALTER TABLE `t_type_articles`
   MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `t_user_account`
+--
+ALTER TABLE `t_user_account`
+  MODIFY `idUsrAcc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

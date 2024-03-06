@@ -1,6 +1,12 @@
 <?php
-    //Datas
-    
+//Simple connection to the database
+    $servername = "localhost";
+    $username = "root";
+    $password = "root";
+    try{
+        $conn = new PDO("mysql:host=$servername;dbname=db_articles_escalade;charset=utf8mb4", $username, $password);
+    }catch(PDOException $e){
+}
 ?>
 
 <?php

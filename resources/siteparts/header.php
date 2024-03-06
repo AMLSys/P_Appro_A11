@@ -25,7 +25,7 @@
           <img loading="lazy" src="../../../../Web/resources/icones/Search_White.svg" class="center"/>
         </div>
         <div class="icones">
-          <img loading="lazy" src="../../../../Web/resources/icones/Account.svg" class="center"/>
+          <a href="../../../../..//Web/src/html/Create_account"><img loading="lazy" src="../../../../Web/resources/icones/Account.svg" class="center"/></a>
           <!--<img loading="lazy" src="../../resources/icones/Love.svg" class="center hearth"/>-->
           <img loading="lazy" src="../../../../Web/resources/icones/Basket.svg" class="center"/>
         </div>

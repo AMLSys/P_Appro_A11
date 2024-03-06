@@ -8,7 +8,11 @@
 <?php setcookie('query', $queryDefault, time()+3600); ?>
 
 <?php
-    $query = $_COOKIE['query'];
+    if (!isset($_COOKIE['query'])){
+        header("Refresh:0");
+    }else{
+        $query = $_COOKIE['query'];
+    }
     $queryNbRows = "SELECT count(*) from t_articles WHERE fkType=$fkType";
     $queryNbItems ="SELECT t_marque.marName, t_marque.idMarque, count(*) AS occurrences FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE fkType=$fkType GROUP BY fkMarque DESC, fkMarque";
     $data = connectToDatabase($query);
@@ -32,7 +36,7 @@
 		    Date: 07.02.2024
 		    Description: Training page of the webiste
 	    -->
-        <title>Bouldero - Training</title>
+        <title>Bouldero - Entraînement</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../../resources/css/shared.css">

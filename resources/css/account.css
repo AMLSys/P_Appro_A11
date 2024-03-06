@@ -1,0 +1,128 @@
+.fullBody{
+display: flex;
+flex-direction: row;
+}
+.fullForm{
+    display: flex;
+    flex-direction: column;
+    align-self: self-end;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.5px;
+    width: 800px;
+    height: 800px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 120px;
+}
+
+.connectionField{
+    display: flex;
+    flex-direction: column;
+}
+
+.titleConnection{
+    text-align: center;
+}
+
+.imgConnection{
+    height: 100%;
+    width: 900px;
+    margin-right: 120px;
+    margin-left: -10px;
+}
+
+.connectionTitle{
+    font-size: 64px;
+    margin-bottom: 18px;
+    font-weight: 500;
+}
+
+.connectionSubtitle{
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.fieldInputs{
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.loginInputs{
+    width: 100% - 30px;
+    height: 60px;
+    border-color: #8F8F8F;
+    border-style: solid;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    font-size: 24px;
+    padding-left: 30px;
+}
+
+::placeholder{
+    color: #8F8F8F;
+    font-size: 24px;
+    margin-top: 10px;
+
+}
+
+.submitButton{
+    width: 100%;
+    height: 70px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 32px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.haveAccount{
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: -0.5px;
+}
+
+.connectAccount{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 30px;
+}
+
+.lines{
+    display: block;
+    border: 0;
+    border-top: 2px solid #000;
+    margin-top: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+    width: 26%;
+}
+
+.doConnect{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.textLink{
+    text-decoration: none;
+    color: #000;
+}
+
+
+
