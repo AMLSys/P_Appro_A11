@@ -4,100 +4,112 @@
         Date        :05.02.2024
         Description :Style sheet for the header
 */
-html, header{
+
+/*Header*/
+.flex-header {
+  display: flex;
+  justify-content: center;
+  width: 99.2vw;
+  margin-left: -10px;
+  margin-top: -10px;
+  position: relative;
+  flex-direction: row;
+}
+
+/*General look of the header*/
+.header-look {
+  background-color: #000;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6px 60px;
+}
+
+@media (max-width: 991px) {
+  .header-look {
+    max-width: 100%;
+  }
+}
+
+.header-space {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .header-space {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+.header-end {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .header-end {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+/*Search bar*/
+.search {
+  align-self: start;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 32px;
+  color: #fff;
+  white-space: nowrap;
+  align-self: center;
+}
+
+@media (max-width: 991px) {
+  .search {
+    white-space: initial;
+  }
+}
+
+/*General*/
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+  align-self: center;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.icones {
+  justify-content: space-between;
   display: flex;
 }
 
-  .flex-header {
-    display: flex;
-    justify-content: center;
-    width: 99.2vw;
-    margin-left: -10px;
-    margin-top: -10px;
-    position: relative;
-    flex-direction: row;
-  }
-  .header-look {
-    background-color: #000;
-    display: flex;
-    width: 100vw;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6px 60px;
-  }
-  @media (max-width: 991px) {
-    .header-look {
-      max-width: 100%;
-    }
-  }
-  .header-space {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  @media (max-width: 991px) {
-    .header-space {
-      max-width: 100%;
-      flex-wrap: wrap;
-    }
-  }
-  .header-end {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin: auto 0;
-  }
-  @media (max-width: 991px) {
-    .header-end {
-      max-width: 100%;
-      flex-wrap: wrap;
-    }
-  }
-  .search {
-    align-self: start;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    font-size: 32px;
-    color: #fff;
-    white-space: nowrap;
-    align-self: center;
-  }
-  @media (max-width: 991px) {
-    .search {
-      white-space: initial;
-    }
-  }
-  .font-montserrat {
-    font-family: 'Montserrat', sans-serif;
-    align-self: center;
-    text-decoration: none;
-    color: #fff;
-    transition: 0.5s;
-  }
-  .icones {
-    justify-content: space-between;
-    display: flex;
-  }
-  .center {
-    align-self: center;
-    padding: 20px;
-    display: flex;
-    height: 50px;
-  }
-  .bouldero-logo {
-    height: 80%;
-    justify-content: center;
-    align-self: center;
-    align-items: center;
-    padding-top: 1vh;
-  }
-.hearth:hover{
-  filter: invert(22%) sepia(73%) saturate(100000%) hue-rotate(355deg) brightness(114%) contrast(129%);
+.center {
+  align-self: center;
+  padding: 20px;
+  display: flex;
+  height: 50px;
 }
-.font-montserrat:hover{
-  color: #FAB400;
+
+.font-montserrat:hover {
+  color: #fab400;
 }
-.collored{
-  color: #FAB400;
+.collored {
+  color: #fab400;
+}
+
+/*Logo*/
+.bouldero-logo {
+  height: 80%;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  padding-top: 1vh;
 }

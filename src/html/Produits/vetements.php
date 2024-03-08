@@ -6,14 +6,14 @@
     //Variable for the 3 items line
     $i = 0;
 ?>
-<?php setcookie('query', $queryDefault, time()+3600); ?>
+<?php setcookie('marge', $queryDefault, time()+3600); ?>
 
 <?php
 //Check if cookie exist
-if (!isset($_COOKIE['query'])) {
+if (!isset($_COOKIE['marge'])) {
     header("Refresh:0");
 }else{
-    $query = $_COOKIE['query'];
+    $query = $_COOKIE['marge'];
 }
     //Multiple query, first for the total number of items and the second for single brand number
     $queryNbRows = "SELECT count(*) from t_articles WHERE fkType=$fkType";

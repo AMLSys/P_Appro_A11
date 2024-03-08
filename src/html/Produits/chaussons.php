@@ -96,8 +96,7 @@ foreach($data as $item){
     </div>
     <!--All items inside cards-->
     <?php foreach ($data as $item): $image = "../../../resources/images/articles/". $item['artImage']; ?>
-        <?php if($i % 4 == 0) {echo "<div class='product-column'>";
-        } ?>
+        <?php if($i % 4 == 0) {echo "<div class='product-column'>";} ?>
     <form id="hiddenForm<?php echo $item['idArticle'];?>" method="POST" action="../../html/Produit">
         <input type="hidden" name="idArticle" value="<?php echo $item['idArticle'];?>">
         <a href="javascript:{}"
@@ -108,8 +107,7 @@ foreach($data as $item){
                 <div class="product-title"><?php echo $item['artBrand']; ?></div>
                 <div class="product-model"><?php echo $item['artModel']; ?></div>
                 <div class="product-price">CHF <?php echo $item['artPrice']; ?></div>
-                <?php if($i % 4 == 3) {echo "</div>";
-                } ?>
+                <?php if($i % 4 == 3) {echo "</div>";} ?>
             </article>
         </a>
     </form>

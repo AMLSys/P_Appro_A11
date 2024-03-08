@@ -4,73 +4,83 @@
         Date        :07.02.2024
         Description :Style sheet for the nav
 */
-html, nav{
+
+/*Nav*/
+.flex-nav {
   display: flex;
+  justify-content: center;
+  width: 99.2vw;
+  margin-left: -10px;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.flex-nav {
-    display: flex;
-    justify-content: center;
-    width: 99.2vw;
-    margin-left: -10px;
-    flex-direction: column;
-    flex-grow: 1;
-  }
+/*Line between header and nav*/
+.collored-line {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: #ffcb44;
+  min-height: 5px;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
   .collored-line {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background-color: #ffcb44;
-    min-height: 5px;
-    width: 100%;
+    max-width: 100%;
   }
-  @media (max-width: 991px) {
-    .collored-line {
-      max-width: 100%;
-    }
-  }
+}
+
+/*General look of the nav*/
+.nav-look {
+  box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0px;
+}
+
+@media (max-width: 991px) {
   .nav-look {
-    box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.45);
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0px;
+    max-width: 100%;
+    padding: 0 20px;
   }
-  @media (max-width: 991px) {
-    .nav-look {
-      max-width: 100%;
-      padding: 0 20px;
-    }
-  }
+}
+
+/*Space between objects*/
+.nav-space {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  gap: 100px;
+  padding: 10px 0;
+}
+
+@media (max-width: 991px) {
   .nav-space {
-    justify-content: space-between;
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    gap: 100px;
-    padding: 10px 0;
+    max-width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
   }
-  @media (max-width: 991px) {
-    .nav-space {
-      max-width: 100%;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-  }
-  .item {
-    font-family: 'Montserrat', sans-serif;
-    flex-grow: 1;
-    font-size: 24px;
-    color: #fff;
-    font-weight: 400;
-    text-decoration: none;
-    transition: 0.4s;
-  }
+}
 
-  .item:hover {
-    color: #FAB400;
-  }
+/*Link to other pages*/
+.item {
+  font-family: "Montserrat", sans-serif;
+  flex-grow: 1;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.4s;
+}
 
-  .collored{
-    color: #FAB400;
-  }
+.item:hover {
+  color: #fab400;
+}
+
+/*General*/
+.collored {
+  color: #fab400;
+}

@@ -1,35 +1,3 @@
-<?php  require '../../../../Web/resources/php/scripts.php'; ?>
-<?php
-    //Query to select every items from the climbing bags
-    $fkType = 2;
-    $queryDefault = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE fkType=$fkType";
-    //Variable for the 3 items line
-    $i = 0;
-?>
-<?php setcookie('query', $queryDefault, time()+3600); ?>
-<?php
-//Check if cookie exist
-if (!isset($_COOKIE['query'])) {
-    header("Refresh:0");
-}else{
-    $query = $_COOKIE['query'];
-}
-    //Multiple query, first for the total number of items and the second for single brand number
-    $queryNbRows = "SELECT count(*) from t_articles WHERE fkType=$fkType";
-    $queryNbItems ="SELECT t_marque.marName, t_marque.idMarque, count(*) AS occurrences FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE fkType=$fkType GROUP BY fkMarque DESC, fkMarque";
-    $data = connectToDatabase($query);
-    $nbRows = findNumberRows($queryNbRows);
-    $dataNbItems = connectToDatabase($queryNbItems);
-?>
-<?php
-//Variables  to show inside the cards
-foreach($data as $item){
-    $image = "../../../resources/images/articles/". $item['artImage'];
-    $brand = $item['artBrand'];
-    $model = $item['artModel'];
-    $price = $item['artPrice']; 
-}
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -46,6 +14,40 @@ foreach($data as $item){
     <link rel="icon" type="image/png" href="../../../resources/icones/Bouldero_Logo.svg">
     <script src="../../../resources/js/websiteFunctions.js"></script>
 </head>
+<?php  require '../../../../Web/resources/php/scripts.php'; ?>
+<?php
+    //Query to select every items from the climbing bags
+    $fkType = 2;
+    $queryDefault = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE fkType=$fkType";
+    //Variable for the 3 items line
+    $i = 0;
+?>
+<?php
+setcookie('query', $queryDefault, time()+3600);
+?>
+<?php
+//Check if cookie exist
+if (!isset($_COOKIE['query'])) {
+    echo "<script> GetSelected($fkType); </script>";
+}else{
+    $query = $_COOKIE['query'];
+}
+    //Multiple query, first for the total number of items and the second for single brand number
+    $queryNbRows = "SELECT count(*) from t_articles WHERE fkType=$fkType";
+    $queryNbItems ="SELECT t_marque.marName, t_marque.idMarque, count(*) AS occurrences FROM t_articles  INNER JOIN t_marque ON t_articles.fkMarque=t_marque.idMarque  WHERE fkType=$fkType GROUP BY fkMarque DESC, fkMarque";
+    $data = connectToDatabase($query);
+    $nbRows = findNumberRows($queryNbRows);
+    $dataNbItems = connectToDatabase($queryNbItems);
+?>
+<?php
+//Variables  to show inside the cards
+foreach($data as $item){
+    $image = "../../../resources/images/articles/". $item['artImage'];
+    $brand = $item['artBrand'];
+    $model = $item['artModel'];
+    $price = $item['artPrice'];
+}
+?>
 <header><?php require '../../../resources/siteparts/header.php'; ?></header>
 <nav><?php includeWithVariables('../../../resources/siteparts/nav.php', array('sacapof' => true)); ?></nav>
 <body>

@@ -32,21 +32,21 @@ function GetSelected(fkType)
             }
         }
         //Display the selected CheckBox values.
-        if (selected.length > 0) {
-            var filter = "";
-            var nbItems = 0
-            var item = "";
-            for (item of selected){
-                if (nbItems == 0) {
-                    filter += " AND (fkMarque=" + item;
-                }else{
-                    filter += " OR fkMarque=" + item;
-                }
-                nbItems++;
-            }
-            filter += ")"
-            $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE (fkType=" + fkType + ")" + filter;
-            document.cookie = "query=" + $query;
+if (selected.length > 0) {
+    var filter = "";
+    var nbItems = 0
+    var item = "";
+    for (item of selected){
+        if (nbItems == 0) {
+            filter += " AND (fkMarque=" + item;
+        }else{
+            filter += " OR fkMarque=" + item;
+        }
+        nbItems++;
+    }
+    filter += ")"
+    $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType, fkMarque FROM t_articles WHERE (fkType=" + fkType + ")" + filter;
+    document.cookie = "query=" + $query;
         }else{
             //Make count query
             $nbArticles = "SELECT count(*) from t_articles WHERE fkType=" + fkType;

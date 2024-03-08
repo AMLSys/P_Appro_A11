@@ -1,8 +1,10 @@
 <?php  include '../../../Web/resources/php/scripts.php'; ?>
-<?php //Query for the item that we selected
+<?php
+//Query for the item that we selected
   $searchArticle= $_POST["idArticle"];
   $query = "SELECT idArticle, artBrand, artModel, artPrice, artDescription, artImage, fkType FROM t_articles WHERE idArticle='$searchArticle'";
-  $data = connectToDatabase($query);?>
+  $data = connectToDatabase($query);
+?>
 <?php
 //Make variables for the page with single product that you choosed
 foreach($data as $item){
