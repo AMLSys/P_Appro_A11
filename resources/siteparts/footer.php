@@ -16,16 +16,19 @@
     <footer>
     <div class="flex-footer">
     <div class="background">
+      <!--Background of the footer-->
       <img loading="lazy" src="../../../../Web/resources/images/Background_Footer.svg" class="background-img" />
       <div class="logo-footer">
         <div class="footer-look">
           <div class="topline">
+            <!--Logo-->
             <div class="logo">
               <a href="../../../../Web/src/html/homepage.php" ><img loading="lazy" src="../../../../Web/resources/images/Logo.svg" class="logo"/></a>
             </div>
           </div>
           <div class="topline-text">
             <div class="top-line-text">
+              <!--First line of items-->
               <div class="top-linetext">
                 <div class="top-item <?php if ($compte == true) echo "collored"; ?>">Compte</div>
                 <div class="top-item <?php if ($panier == true) echo "collored"; ?>">Panier</div>
@@ -36,7 +39,9 @@
                   <img loading="lazy" src="../../../../Web/resources/icones/Search_Black.svg" class="search-img"/>
                 </div>
               </div>
+              <!--Line-->
               <div class="bottom-bar"></div>
+              <!--Second line of items-->
               <div class="bottom-bar-text">
                   <a class="bottom-item <?php if ($chaussons == true) echo "collored"; ?>" onclick="GetSelected(1)" href="../../../../Web/src/html/Produits/Chaussons">Chaussons</a>
                   <a class="bottom-item <?php if ($sacapof == true) echo "collored"; ?>" onclick="GetSelected(2)" href="../../../../Web/src/html/Produits/Sac-a-pof">Sac à Pof</a>
@@ -48,6 +53,7 @@
           </div>
         </div>
       </div>
+      <!--Creator of the website-->
       <div class="credits">
           <img loading="lazy" src="../../../../Web/resources/icones/Copyright.svg" class="copyright-img"/>
           <a href="https://github.com/AMLSys" class="credits-text">2024 Aurélien Lahaye</a>

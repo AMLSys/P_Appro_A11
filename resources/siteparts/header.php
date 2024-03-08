@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -18,15 +17,19 @@
 <div class="flex-header">
   <div class="header-look">
     <div class="header-space">
+      <!--Logo-->
         <a href="../../../../../Web/src/html/Bouldero" ><img loading="lazy" src="../../../../Web/resources/images/Logo.svg" class="bouldero-logo" /></a>
       <div class="header-end">
         <div class="search">
+          <!--Blog-->
             <a class="font-montserrat <?php if ($blog == true) echo "collored"; ?>" href="../../../../../Web/src/html/Blog">Blog</a>
+            <!--Search-->
           <img loading="lazy" src="../../../../Web/resources/icones/Search_White.svg" class="center"/>
         </div>
         <div class="icones">
+          <!--Account-->
           <a href="../../../../..//Web/src/html/Create_account"><img loading="lazy" src="../../../../Web/resources/icones/Account.svg" class="center"/></a>
-          <!--<img loading="lazy" src="../../resources/icones/Love.svg" class="center hearth"/>-->
+          <!--Basket-->
           <img loading="lazy" src="../../../../Web/resources/icones/Basket.svg" class="center"/>
         </div>
       </div>

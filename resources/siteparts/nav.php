@@ -16,8 +16,10 @@
     </head>
     <nav>
         <div class="flex-nav">
+            <!--Yellow line-->
             <div class="collored-line"></div>
                 <div class="nav-look">
+                    <!--All line of link for each category of items-->
                     <div class="nav-space">
                         <a class="item <?php if ($chaussons == true) echo "collored"; ?>" onclick="GetSelected(1)" href="../../../../Web/src/html/Produits/Chaussons">Chaussons</a>
                         <a class="item <?php if ($sacapof == true) echo "collored"; ?>" onclick="GetSelected(2)" href="../../../../Web/src/html/Produits/Sac-a-pof">Sac à Pof</a>

@@ -41,7 +41,6 @@ html, header{
       flex-wrap: wrap;
     }
   }
- 
   .header-end {
     display: flex;
     justify-content: space-between;
@@ -62,7 +61,6 @@ html, header{
     font-size: 32px;
     color: #fff;
     white-space: nowrap;
-    
     align-self: center;
   }
   @media (max-width: 991px) {
@@ -81,14 +79,12 @@ html, header{
     justify-content: space-between;
     display: flex;
   }
-
   .center {
     align-self: center;
     padding: 20px;
     display: flex;
     height: 50px;
   }
-
   .bouldero-logo {
     height: 80%;
     justify-content: center;
@@ -96,15 +92,12 @@ html, header{
     align-items: center;
     padding-top: 1vh;
   }
-
 .hearth:hover{
   filter: invert(22%) sepia(73%) saturate(100000%) hue-rotate(355deg) brightness(114%) contrast(129%);
 }
-
 .font-montserrat:hover{
   color: #FAB400;
 }
-
 .collored{
   color: #FAB400;
 }
