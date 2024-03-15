@@ -23,17 +23,17 @@
           <div class="topline">
             <!--Logo-->
             <div class="logo">
-              <a href="../../../../Web/src/html/homepage.php" ><img loading="lazy" src="../../../../Web/resources/images/Logo.svg" class="logo"/></a>
+              <a href="../../../../Web/src/html/Bouldero" ><img loading="lazy" src="../../../../Web/resources/images/Logo.svg" class="logo"/></a>
             </div>
           </div>
           <div class="topline-text">
             <div class="top-line-text">
               <!--First line of items-->
               <div class="top-linetext">
-                <div class="top-item <?php if ($compte == true) echo "collored"; ?>">Compte</div>
+              <a class="top-item <?php if ($blog == true) echo "collored"; ?>" href="../../../../Web/src/html/Create_Account">Compte</a>
                 <div class="top-item <?php if ($panier == true) echo "collored"; ?>">Panier</div>
                 <div class="top-item <?php if ($favoris == true) echo "collored"; ?>">Favoris</div>
-                <div class="top-item <?php if ($blog == true) echo "collored"; ?>">Blog</div>
+                <a class="top-item <?php if ($blog == true) echo "collored"; ?>" href="../../../../Web/src/html/Blog">Blog</a>
                 <div class="search-bar">
                   <div class="search-text">Recherches...</div>
                   <img loading="lazy" src="../../../../Web/resources/icones/Search_Black.svg" class="search-img"/>
